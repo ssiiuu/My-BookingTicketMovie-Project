@@ -1,0 +1,25 @@
+.slick-prev:before, .slick-next:before{
+    color: gray !important;
+    font-size: 3rem !important;
+}
+.slick-prev{
+    left: -120px !important;
+}
+.slick-next{
+    right: -100px !important ;
+}
+
+.width-item{
+    width:100% !important;
+}
+.active-btn-film{
+  background-color: black !important;
+  color: white !important;
+  border:2px solid black !important
+}
+.none-active-btn-film{
+  background-color: white !important;
+  color: black !;
+  border:2px solid black !important
+
+}
