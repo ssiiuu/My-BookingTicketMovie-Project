@@ -1,39 +1,71 @@
-.flip-card {
-    background-color: transparent;
-    width: 300px;
-    height: 400px;
-    perspective: 1000px;
-  }
+.item-film-img{
+  position: relative;
+}
+.item-film-img:hover .overlay-film{
+  opacity: 1;
+  transition: 0.3s;
+}
+.item-film-img:hover .btn-play-trailer{
+  opacity: 1;
+  transition: 0.3s;
+}
+.overlay-film{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(0deg,#000,transparent);
+  opacity: 0;
+}
+.play-trailer{
+  position: absolute;
+  top:40%;
+  left:40%;
+}
+.btn-play-trailer{
+  opacity: 0;
+}
+.btn-rate-film{
+  width: 50px;
+  height:50px;
+  border-radius: 100%;
+  background-color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+  font-size: 22px;
+  position: absolute;
+  top: -10px;
+  right: -10px;
   
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  }
-  
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
-  
-  .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-  
-  .flip-card-front {
-    background-color: #bbb;
-    color: black;
-  }
-  
-  .flip-card-back {
-    background-color: #bbb;
-    color: white;
-    transform: rotateY(180deg);
-  }
+}
+.btn-detail-film{
+  padding: 10px 20px;
+  color:white;
+  font-size: 22px;
+  background-color: #059669;
+  text-align: center;
+  opacity: 0;
+  margin-top: 3px;
+  border-radius: 4px;
+}
+.item-film-img:hover .btn-detail-film{
+  opacity: 1;
+  transition: 0.3s;
+}
+.ant-input-search .ant-input:hover{
+  border-color: #059669 !important;
+}
+.ant-input-search .ant-input:focus{
+  border-color: #059669 !important;
+  box-shadow: 0 0 0 2px rgba(2, 78, 13, 0.2) !important;
+}
+.ant-btn-primary {
+  border-color: #059669 !important;
+  background-color: #059669 !important;
+}
+.ant-btn > span {
+  margin-bottom: 10px !important;
+}

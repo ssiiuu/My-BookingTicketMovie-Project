@@ -4,6 +4,7 @@ import { loadingReducer } from "./loadingReducer";
 import { quanLyNguoiDungReducer } from "./nguoiDungReducer";
 import { quanLyPhimReducer } from "./phimReducer";
 import { quanLyDatVeReducer } from "./quanLyDatVeReducer";
+import { quanLyRapReducer } from "./quanLyRapReducer";
 
 export const rootReducer = combineReducers({
   carouselReducer,
@@ -11,4 +12,5 @@ export const rootReducer = combineReducers({
   quanLyNguoiDungReducer,
   quanLyDatVeReducer,
   loadingReducer,
+  quanLyRapReducer,
 });

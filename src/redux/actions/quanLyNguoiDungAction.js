@@ -34,11 +34,10 @@ export const dangNhapAction = (data) => {
         });
         message.success("Đăng nhập thành công!");
         setTimeout(() => {
-          history.goBack();
+          history.push("/");
         }, 3000);
       })
       .catch((err) => {
-        // console.log("err", err);
         message.error(`${err.err.response.data.content}`);
       });
   };

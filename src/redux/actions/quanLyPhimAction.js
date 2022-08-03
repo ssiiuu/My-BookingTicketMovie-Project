@@ -1,11 +1,9 @@
-import httpServ from "../../services/http.service";
 import QuanLyPhimServ from "../../services/QuanLyPhim.service";
 import { LAY_THONG_TIN_PHIM, SET_DANH_SACH_PHIM } from "../type/phimType";
 
 export const layDanhSachPhimAction = () => {
   return (dispatch) => {
-    httpServ
-      .layDanhSachPhim()
+    QuanLyPhimServ.layDanhSachPhim()
       .then((res) => {
         dispatch({
           type: SET_DANH_SACH_PHIM,

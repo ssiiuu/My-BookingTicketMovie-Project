@@ -27,7 +27,7 @@ class AxiosService {
     this.axiosConfig = {
       headers: {
         TokenCybersoft: TOKEN_CYBERSOFT,
-        Authorization: "Bearer" + localStorageServ.accessToken.get(),
+        Authorization: "bearer" + localStorageServ.accessToken.get(),
       },
     };
   };
@@ -94,16 +94,13 @@ class AxiosService {
 
   handleError = (err) => {
     const status = err.response?.status;
-    switch (
-      status
-      // case 400:
-      // case 401:
-      // case 403:
-      //   window.location.assign("/lms");
-      //   break;
-      // default:
-      //   break;
-    ) {
+    switch (status) {
+      case 400:
+      case 401:
+      case 403:
+        break;
+      default:
+        break;
     }
   };
   //

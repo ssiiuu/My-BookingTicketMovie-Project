@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import { NavLink } from "react-router-dom";
+import { history } from "../../../App";
 import UserNavHeader from "./UserNavHeader";
 
 export default function NavHeader() {
   return (
     <div>
-      <header className="p-2 dark:bg-coolGray-800 dark:text-coolGray-100 fixed bg-white text-black w-full z-10 ">
+      <header className="p-2 shadow-xl fixed bg-white text-black w-full z-50 ">
         <div className="container flex justify-between items-center  mx-auto">
           <NavLink
             to={"/"}
@@ -22,48 +23,40 @@ export default function NavHeader() {
           </NavLink>
           <ul className="items-stretch space-x-2 lg:flex flex   ">
             <li>
-              <NavLink
-                activeClassName="border-b-3 border-orange-600"
-                to={"/lichChieu"}
+              <a
+                onClick={() => {
+                  history.push("/");
+                }}
                 rel="noopener noreferrer"
-                href="#"
-                className="text-black text-base font-semibold flex items-center px-4 -mb-1 dark:border-transparent dark:text-violet-400 dark:border-violet-400"
+                href="#lichChieu"
+                className="text-black text-base font-semibold flex items-center px-4 -mb-1 hover:text-green-600"
               >
                 Lịch Chiếu
-              </NavLink>
+              </a>
             </li>
             <li>
-              <NavLink
-                activeClassName="border-b-3 border-orange-600"
-                to={"/cumRap"}
+              <a
+                onClick={() => {
+                  history.push("/");
+                }}
                 rel="noopener noreferrer"
-                href="#"
-                className="text-black text-base font-semibold flex items-center px-4 -mb-1 dark:border-transparent"
+                href="#cumRap"
+                className="text-black text-base font-semibold flex items-center px-4 -mb-1 hover:text-green-600"
               >
                 Cụm Rạp
-              </NavLink>
+              </a>
             </li>
             <li>
-              <NavLink
-                activeClassName="border-b-3 border-orange"
-                to={"/tinTuc"}
+              <a
+                onClick={() => {
+                  history.push("/");
+                }}
                 rel="noopener noreferrer"
-                href="#"
-                className="text-black text-base font-semibold flex items-center px-4 -mb-1  dark:border-transparent"
+                href="#tinTuc"
+                className="text-black text-base font-semibold flex items-center px-4 -mb-1  hover:text-green-600"
               >
                 Tin Tức
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                activeClassName="border-b-3 border-orange"
-                to={"/ungDung"}
-                rel="noopener noreferrer"
-                href="#"
-                className="text-black text-base font-semibold flex items-center px-4 -mb-1  dark:border-transparent"
-              >
-                Ứng Dụng
-              </NavLink>
+              </a>
             </li>
           </ul>
           <div>

@@ -1,0 +1,18 @@
+.modal-trailer .ant-modal-footer{
+    display: none !important;
+}
+.modal-trailer .ant-modal-body{
+    padding: 0 !important;
+}
+.ant-modal {
+    top:50px !important;
+}
+.modal-trailer .ant-modal-close {
+    top: -38px !important;
+    right: -28px !important;
+    color: white !important;
+    
+}
+.modal-trailer .ant-modal-close-x {
+    font-size: 40px !important;
+}

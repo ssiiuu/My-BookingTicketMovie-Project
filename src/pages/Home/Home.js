@@ -1,7 +1,8 @@
 import React from "react";
-import MultipleRows from "../../components/React-Slick/MultipleRowSlick";
+import Application from "./Application/Application";
 import HomeCarousel from "./HomeCarousel/HomeCarousel";
 import ListPhim from "./ListPhim/ListPhim";
+import News from "./News/News";
 import TabsPhim from "./TabsPhim/TabsPhim";
 
 export default function Home() {
@@ -11,6 +12,8 @@ export default function Home() {
       <div className="container mx-auto mt-20">
         <ListPhim />
         <TabsPhim />
+        <News />
+        {/* <Application /> */}
       </div>
     </div>
   );

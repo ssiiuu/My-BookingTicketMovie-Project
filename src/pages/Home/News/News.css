@@ -1,0 +1,9 @@
+.ant-tabs-tab:hover{
+    color: #059669 !important;
+}
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #059669 !important;
+}
+.ant-tabs-ink-bar {
+    background:#059669 !important;
+}

@@ -11,10 +11,8 @@ export default function ListPhim() {
   }, []);
 
   return (
-    <div className="container mx-auto">
+    <div id="lichChieu" className="container">
       <MultipleRows arrFilm={arrFilm} />
-
-      {/* <div className=" flex flex-wrap">{renderDSPhim()}</div> */}
     </div>
   );
 }

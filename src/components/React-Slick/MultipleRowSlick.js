@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Slider from "react-slick";
 import ItemPhim from "../../pages/Home/ItemPhim/ItemPhim";
@@ -7,6 +7,9 @@ import {
   SET_PHIM_SAP_CHIEU,
 } from "../../redux/type/phimType";
 import styleSlick from "./MultipleRowSlick.module.css";
+import ModalAnt from "../Modal-Ant/ModalAnt";
+import { Input } from "antd";
+const { Search } = Input;
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -29,16 +32,37 @@ function SamplePrevArrow(props) {
   );
 }
 
-const MultipleRows = (props) => {
+const onSearch = (value) => console.log(value);
+
+const MultipleRows = ({ arrFilm }) => {
+  const [trailerURL, setTrailerURL] = useState("");
+
   const dispatch = useDispatch();
+
+  const [searchInput, setSearchInput] = useState("");
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const [isPlaying, setIsPlaying] = useState(false);
+
   const { dangChieu, sapChieu } = useSelector(
     (state) => state.quanLyPhimReducer
   );
 
+  let arrFilmSearched = arrFilm.filter((phim) => {
+    return phim.tenPhim.toLowerCase().includes(searchInput.toLowerCase());
+  });
+
   const renderPhim = () => {
-    return props.arrFilm?.slice(0, 10).map((phim, index) => {
+    return arrFilmSearched?.map((phim, index) => {
       return (
-        <div className={`${styleSlick["width-item"]}`} key={index}>
+        <div
+          key={index}
+          onClick={() => {
+            setTrailerURL(phim.trailer);
+            showModal();
+          }}
+        >
           <ItemPhim phim={phim} />
         </div>
       );
@@ -46,46 +70,75 @@ const MultipleRows = (props) => {
   };
 
   const settings = {
-    className: "center variable-width",
-    centerMode: true,
+    className: "center",
     infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 3,
-    speed: 500,
-    rows: 1,
-    slidesPerRow: 2,
-    variableWidth: true,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    speed: 700,
+    rows: 2,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
 
   let activeBtnDC = dangChieu ? "active-btn-film" : "none-active-btn-film";
   let activeBtnSC = sapChieu ? "active-btn-film" : "none-active-btn-film";
+
+  const showModal = () => {
+    setIsModalVisible(true);
+    setIsPlaying(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+    setIsPlaying(false);
+  };
   return (
     <div>
-      <button
-        onClick={() => {
-          dispatch({
-            type: SET_PHIM_DANG_CHIEU,
-          });
-        }}
-        type="button"
-        className={`${styleSlick[activeBtnDC]} px-8 py-3 font-semibold border rounded mr-2`}
-      >
-        Phim đang chiếu
-      </button>
-      <button
-        onClick={() => {
-          dispatch({
-            type: SET_PHIM_SAP_CHIEU,
-          });
-        }}
-        type="button"
-        className={`${styleSlick[activeBtnSC]} px-8 py-3 font-semibold border rounded `}
-      >
-        Phim sắp chiếu
-      </button>
-      <Slider {...settings}>{renderPhim()}</Slider>
+      <div className="flex items-center justify-between">
+        <div>
+          <button
+            onClick={() => {
+              dispatch({
+                type: SET_PHIM_DANG_CHIEU,
+              });
+            }}
+            type="button"
+            className={`${styleSlick[activeBtnDC]} px-8 py-3 font-semibold border rounded mr-2`}
+          >
+            Phim đang chiếu
+          </button>
+          <button
+            onClick={() => {
+              dispatch({
+                type: SET_PHIM_SAP_CHIEU,
+              });
+            }}
+            type="button"
+            className={`${styleSlick[activeBtnSC]} px-8 py-3 font-semibold border rounded `}
+          >
+            Phim sắp chiếu
+          </button>
+        </div>
+        <Search
+          style={{ width: 300 }}
+          placeholder="Nhập tên phim..."
+          onSearch={onSearch}
+          enterButton
+          onChange={(e) => {
+            setSearchInput(e.target.value);
+          }}
+        />
+      </div>
+      <ModalAnt
+        isPlaying={isPlaying}
+        trailerURL={trailerURL}
+        isModalVisible={isModalVisible}
+        handleCancel={handleCancel}
+      />
+
+      <Slider {...settings} className="mt-10">
+        {renderPhim()}
+      </Slider>
     </div>
   );
 };

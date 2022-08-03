@@ -19,6 +19,12 @@ export default function TicketBookingPage(props) {
     (state) => state.quanLyDatVeReducer
   );
 
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(layChiTietPhongVeAction(maLichChieu));
+  }, []);
+
   console.log("chiTietPhongVe", chiTietPhongVe);
   const { thongTinPhim, danhSachGhe } = chiTietPhongVe;
 
@@ -59,11 +65,6 @@ export default function TicketBookingPage(props) {
     });
   };
 
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(layChiTietPhongVeAction(maLichChieu));
-  }, []);
   return (
     <div className="m-5 min-h-screen">
       <div className="grid grid-cols-12 ">
@@ -108,11 +109,11 @@ export default function TicketBookingPage(props) {
             <hr />
             <div className=" py-5">
               <span className=" text-red-600 text-xl">Ghế: </span>
-              {danhSachGheDangDat.map((gheDD, index) => {
+              {danhSachGheDangDat.map((gheDD) => {
                 return (
                   <span
                     className="text-xl font-semibold text-green-600 mr-2 inline-block"
-                    key={index}
+                    key={gheDD.stt}
                   >
                     {gheDD.stt}
                   </span>
@@ -139,7 +140,7 @@ export default function TicketBookingPage(props) {
                 thongTinDatVe.maLichChieu = props.match.params.maLichChieu;
                 thongTinDatVe.danhSachVe = danhSachGheDangDat;
                 console.log("thongTinDatVe", thongTinDatVe);
-                // dispatch(datVeAction(thongTinDatVe));
+                dispatch(datVeAction(thongTinDatVe));
               }}
               className="w-full bg-green-600 text-white text-center text-2xl p-3 cursor-pointer"
             >

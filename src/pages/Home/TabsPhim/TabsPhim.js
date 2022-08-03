@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Tabs } from "antd";
-import httpServ from "../../../services/http.service";
 import ItemTabsPhim from "./ItemTabsPhim";
+import QuanLyPhimServ from "../../../services/QuanLyPhim.service";
 
 const { TabPane } = Tabs;
 
 export default function TabsPhim(props) {
   const [arrHeThongRap, setArrHeThongRap] = useState([]);
   useEffect(() => {
-    httpServ
-      .layThongTinLichChieuHeThongRap()
+    QuanLyPhimServ.layThongTinLichChieuHeThongRap()
       .then((res) => {
         setArrHeThongRap(res.data.content);
       })
@@ -22,6 +21,8 @@ export default function TabsPhim(props) {
     return arrHeThongRap.map((heThongRap, index) => {
       return (
         <TabPane
+          className="overflow-y-scroll"
+          style={{ height: 700 }}
           tab={
             <img src={heThongRap.logo} className="rounded-full" width={60} />
           }
@@ -32,7 +33,7 @@ export default function TabsPhim(props) {
               return (
                 <TabPane
                   tab={
-                    <div className="flex">
+                    <div className="flex " style={{ width: 400 }}>
                       <img
                         src={cumRap.hinhAnh}
                         className="rounded mr-2"
@@ -42,7 +43,9 @@ export default function TabsPhim(props) {
                         <h2 className="font-bold text-lg text-green-600">
                           {cumRap.tenCumRap}
                         </h2>
-                        <span>{cumRap.diaChi}</span>
+                        <span style={{ whiteSpace: "initial" }}>
+                          {cumRap.diaChi}
+                        </span>
                         <p className="text-red-400 ">
                           Chi tiết <i className="fa fa-arrow-right"></i>
                         </p>
@@ -71,7 +74,12 @@ export default function TabsPhim(props) {
     });
   };
   return (
-    <Tabs tabPosition={"left"} defaultActiveKey="0" className="mt-20">
+    <Tabs
+      id="cumRap"
+      tabPosition={"left"}
+      defaultActiveKey="0"
+      className="mt-20"
+    >
       {renderHeThongRap()}
     </Tabs>
   );

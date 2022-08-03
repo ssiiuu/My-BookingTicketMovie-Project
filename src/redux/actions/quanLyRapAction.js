@@ -1,11 +1,26 @@
-import httpServ from "../../services/http.service";
+import QuanLyRapServ from "../../services/QuanLyRap.service";
+import { SET_HE_THONG_RAP } from "../type/quanLyRapType";
 
-export const layHeThongRapChieuAction = () => {
+export const layThongTinLichChieuHeThongRapAction = () => {
   return (dispatch) => {
-    httpServ
-      .layThongTinLichChieuHeThongRap()
+    QuanLyRapServ.layThongTinLichChieuHeThongRap()
       .then((res) => {
         console.log("res", res);
+      })
+      .catch((err) => {
+        console.log("err", err);
+      });
+  };
+};
+
+export const layHeThongRapAction = () => {
+  return (dispatch) => {
+    QuanLyRapServ.layHeThongRap()
+      .then((res) => {
+        dispatch({
+          type: SET_HE_THONG_RAP,
+          payload: res.data.content,
+        });
       })
       .catch((err) => {
         console.log("err", err);

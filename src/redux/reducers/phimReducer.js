@@ -30,9 +30,7 @@ export const quanLyPhimReducer = (state = initialState, action) => {
       state.sapChieu = true;
       state.dangChieu = false;
 
-      state.arrFilm = state.arrFilmDefault.filter(
-        (phim) => phim.sapChieu && phim.dangChieu === false
-      );
+      state.arrFilm = state.arrFilmDefault.filter((phim) => phim.sapChieu);
       return { ...state };
     }
     case LAY_THONG_TIN_PHIM: {

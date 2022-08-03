@@ -1,20 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { CustomCard } from "@tsamantanis/react-glassmorphism";
 import "@tsamantanis/react-glassmorphism/dist/index.css";
 import "../../assets/style/circleRating.css";
-import { StarOutlined } from "@ant-design/icons";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { layThongTinPhimAction } from "../../redux/actions/quanLyPhimAction";
 import moment from "moment";
-import { Button, Rate } from "antd";
+import { Rate } from "antd";
 import DetailLichChieuPhim from "./DetailLichChieuPhim/DetailLichChieuPhim";
 import { Tabs } from "antd";
+import { CaretRightOutlined } from "@ant-design/icons";
+import "../Home/ItemPhim/ItemPhim.css";
+import ModalAnt from "../../components/Modal-Ant/ModalAnt";
 
 const { TabPane } = Tabs;
 
 const onChange = (key) => {
-  console.log(key);
+  // console.log(key);
 };
 
 export default function Detail() {
@@ -29,36 +31,87 @@ export default function Detail() {
     (state) => state.quanLyPhimReducer
   );
 
+  const [trailerURL, setTrailerURL] = useState("");
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+    setIsPlaying(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+    setIsPlaying(false);
+  };
+
   return (
     <div
       style={{
-        backgroundImage: `url(${thongTinChiTietPhim.hinhAnh})`,
+        backgroundImage: `url(${thongTinChiTietPhim.hinhAnh}), url("https:/picsum.photos/500")`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
         minHeight: 700,
       }}
     >
+      <ModalAnt
+        isPlaying={isPlaying}
+        trailerURL={trailerURL}
+        isModalVisible={isModalVisible}
+        handleCancel={handleCancel}
+      />
       <CustomCard
         style={{ minHeight: 700, paddingTop: 150 }}
-        effectColor="#04823b" // required
-        color="black" // default color is white
-        blur={20} // default blur value is 10px
+        effectColor="#1f2937" // required
+        color="white" // default color is white
+        blur={50} // default blur value is 10px
         borderRadius={0} // default border radius value is 10px
       >
         <div className="">
           <div className="grid grid-cols-6">
-            <div className="col-start-2">
-              <img
-                style={{ width: 300, height: 400, objectFit: "cover" }}
-                src={thongTinChiTietPhim.hinhAnh}
-                alt="..."
-              />
+            <div className="col-start-2 col-span-1">
+              <div
+                onClick={() => {
+                  setTrailerURL(thongTinChiTietPhim.trailer);
+                  showModal();
+                }}
+                className="item-film-img cursor-pointer"
+              >
+                <img
+                  style={{
+                    width: 300,
+                    height: 400,
+                    objectFit: "cover",
+                    borderRadius: 6,
+                  }}
+                  src={thongTinChiTietPhim.hinhAnh}
+                  alt={thongTinChiTietPhim.tenPhim}
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = "https://picsum.photos/500";
+                  }}
+                />
+
+                <div className="overlay-film"></div>
+                <div className="play-trailer">
+                  <div className="btn-play-trailer">
+                    <CaretRightOutlined className="text-white text-6xl" />
+                  </div>
+                </div>
+                <div className="btn-rate-film">
+                  {thongTinChiTietPhim.danhGia}
+                </div>
+              </div>
             </div>
             <div className="col-span-2 flex items-center ml-4">
               <div className="text-white">
                 {thongTinChiTietPhim.hot ? (
-                  <Button className=" font-bold bg-yellow-500">Hot</Button>
+                  <div className="w-10 h-5 text-center font-bold bg-yellow-500">
+                    Hot
+                  </div>
                 ) : (
                   <></>
                 )}

@@ -9,7 +9,6 @@ export default function DetailLichChieuPhim() {
   const { thongTinChiTietPhim } = useSelector(
     (state) => state.quanLyPhimReducer
   );
-  console.log("thongTinChiTietPhim", thongTinChiTietPhim);
 
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -53,7 +52,7 @@ export default function DetailLichChieuPhim() {
                         <div className="col-span-1 mb-5" key={indexLichChieu}>
                           <NavLink
                             to={`/ticketbooking/${lichChieu.maLichChieu}`}
-                            className="text-green-700 border-2 border-green-400 rounded px-1 py-1"
+                            className="text-green-600 border-2 border-green-600 hover:text-white hover:bg-green-600 rounded px-1 py-1"
                           >
                             {moment(lichChieu.ngayChieuGioChieu).format(
                               "hh:mm A - DD.MM.YYYY"
