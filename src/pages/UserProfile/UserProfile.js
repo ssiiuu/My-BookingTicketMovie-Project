@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Tabs } from "antd";
 import ThongTinTaiKhoan from "./ThongTinTaiKhoan/ThongTinTaiKhoan";
+import LichSuDatVe from "./LichSuDatVe/LichSuDatVe";
 
 export default function UserProfile() {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ export default function UserProfile() {
   const { TabPane } = Tabs;
 
   const onChange = (key) => {
-    console.log(key);
+    // console.log(key);
   };
 
   return (
@@ -47,7 +48,7 @@ export default function UserProfile() {
               <ThongTinTaiKhoan />
             </TabPane>
             <TabPane tab="LỊCH SỬ ĐẶT VÉ" key="2">
-              Content of Tab Pane 2
+              <LichSuDatVe />
             </TabPane>
           </Tabs>
         </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Checkbox, Form, Input } from "antd";
+import { Button, Checkbox, Form, Input, message } from "antd";
 import { useSelector } from "react-redux";
 
 export default function ThongTinTaiKhoan() {
@@ -104,7 +104,13 @@ export default function ThongTinTaiKhoan() {
             span: 20,
           }}
         >
-          <Button type="primary" htmlType="submit">
+          <Button
+            onClick={() => {
+              message.warning("There are some problems with your operation!");
+            }}
+            type="primary"
+            htmlType="submit"
+          >
             Cập nhật
           </Button>
         </Form.Item>
