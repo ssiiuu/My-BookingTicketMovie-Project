@@ -157,15 +157,15 @@ export default function Detail() {
                 tabBarStyle={{ color: "green" }}
                 style={{ minHeight: 500 }}
               >
-                <TabPane tab="Lịch Chiếu" key="1">
+                <TabPane tab="LỊCH CHIẾU" key="1">
                   <DetailLichChieuPhim />
                 </TabPane>
-                <TabPane tab="Thông Tin" key="2">
+                {/* <TabPane tab="Thông Tin" key="2">
                   Thông tin
                 </TabPane>
                 <TabPane tab="Đánh Giá" key="3">
                   Đánh giá
-                </TabPane>
+                </TabPane> */}
               </Tabs>
             </div>
           </div>

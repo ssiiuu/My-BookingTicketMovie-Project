@@ -25,7 +25,6 @@ export default function TicketBookingPage(props) {
     dispatch(layChiTietPhongVeAction(maLichChieu));
   }, []);
 
-  console.log("chiTietPhongVe", chiTietPhongVe);
   const { thongTinPhim, danhSachGhe } = chiTietPhongVe;
 
   const renderSeats = () => {
@@ -66,7 +65,7 @@ export default function TicketBookingPage(props) {
   };
 
   return (
-    <div className="m-5 min-h-screen">
+    <div className="p-10 min-h-screen">
       <div className="grid grid-cols-12 ">
         <div className="col-span-9 mt-5">
           <div className="flex justify-center">
@@ -139,7 +138,7 @@ export default function TicketBookingPage(props) {
                 const thongTinDatVe = new ThongTinDatVe();
                 thongTinDatVe.maLichChieu = props.match.params.maLichChieu;
                 thongTinDatVe.danhSachVe = danhSachGheDangDat;
-                console.log("thongTinDatVe", thongTinDatVe);
+                // console.log("thongTinDatVe", thongTinDatVe);
                 dispatch(datVeAction(thongTinDatVe));
               }}
               className="w-full bg-green-600 text-white text-center text-2xl p-3 cursor-pointer"
