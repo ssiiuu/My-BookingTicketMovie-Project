@@ -19,3 +19,29 @@
 .gheVip{
     background-color: rgb(234, 234, 8);
 }
+
+@media only screen and (max-width: 1025px) {
+    .list__seat{
+        grid-template-columns: repeat(8,1fr) !important;
+    }
+   .booking__ticket{
+    grid-template-columns: 1fr !important;
+   }
+   .booking__ticket__check{
+    justify-content: start !important;
+   }
+   .booking__ticket__content{
+    margin-top: 30px !important;
+   }
+    
+}
+
+@media only screen and (max-width: 769px) {
+    .seat__br{
+        display: none !important;
+    }
+    
+}
+@media only screen and (max-width: 481px) {
+
+}

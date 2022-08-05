@@ -8,11 +8,11 @@ export default function ItemTabsPhim({ phim }) {
         src={phim.hinhAnh}
         alt={phim.tenPhim}
         style={{ width: "75px", height: "75px", objectFit: "cover" }}
-        className="my-2 rounded "
+        className="itemTabsPhim__img my-2 rounded "
       />
-      <div className="ml-3">
+      <div className="ml-3 itemTabsPhim__content">
         <h2 className="font-bold text-green-600">{phim.tenPhim}</h2>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="tabsfilm__item-lichChieu grid grid-cols-3 gap-4">
           {phim.lstLichChieuTheoPhim?.slice(0, 10).map((lichChieu, index) => {
             return (
               <NavLink

@@ -78,6 +78,33 @@ const MultipleRows = ({ arrFilm }) => {
     rows: 2,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1025,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 769,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 481,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          rows: 1,
+        },
+      },
+    ],
   };
 
   let activeBtnDC = dangChieu ? "active-btn-film" : "none-active-btn-film";
@@ -94,8 +121,8 @@ const MultipleRows = ({ arrFilm }) => {
   };
   return (
     <div>
-      <div className="flex items-center justify-between">
-        <div>
+      <div className="listfilm__top flex items-center justify-between">
+        <div className="flex items-center justify-between">
           <button
             onClick={() => {
               dispatch({
@@ -103,7 +130,7 @@ const MultipleRows = ({ arrFilm }) => {
               });
             }}
             type="button"
-            className={`${styleSlick[activeBtnDC]} px-8 py-3 font-semibold border rounded mr-2`}
+            className={`listfilm__btn ${styleSlick[activeBtnDC]} px-8 py-3 font-semibold border rounded mr-2`}
           >
             Phim đang chiếu
           </button>
@@ -114,12 +141,13 @@ const MultipleRows = ({ arrFilm }) => {
               });
             }}
             type="button"
-            className={`${styleSlick[activeBtnSC]} px-8 py-3 font-semibold border rounded `}
+            className={`listfilm__btn ${styleSlick[activeBtnSC]} px-8 py-3 font-semibold border rounded `}
           >
             Phim sắp chiếu
           </button>
         </div>
         <Search
+          className="listfilm__search"
           style={{ width: 300 }}
           placeholder="Nhập tên phim..."
           onSearch={onSearch}

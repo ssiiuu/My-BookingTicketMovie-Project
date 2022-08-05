@@ -41,7 +41,7 @@ export default function TicketBookingPage(props) {
         classgheDangDat = "gheDangDat";
       }
       return (
-        <Fragment key={index}>
+        <Fragment key={index} className="seat__item">
           <button
             onClick={() => {
               dispatch({
@@ -58,7 +58,7 @@ export default function TicketBookingPage(props) {
               ghe.stt
             )}
           </button>
-          {(index + 1) % 16 === 0 ? <br /> : ""}
+          {(index + 1) % 16 === 0 ? <br className="seat__br" /> : <></>}
         </Fragment>
       );
     });
@@ -66,7 +66,7 @@ export default function TicketBookingPage(props) {
 
   return (
     <div className="p-10 min-h-screen">
-      <div className="grid grid-cols-12 ">
+      <div className="booking__ticket grid grid-cols-12 ">
         <div className="col-span-9 mt-5">
           <div className="flex justify-center">
             <div>
@@ -77,12 +77,12 @@ export default function TicketBookingPage(props) {
             </div>
           </div>
           <div className="flex justify-center">
-            <div>{renderSeats()}</div>
+            <div className="list__seat">{renderSeats()}</div>
           </div>
         </div>
-        <div className="min-h-screen col-span-3 flex flex-col justify-between">
-          <div className="">
-            <div className="text-center">
+        <div className="booking__ticket__check min-h-screen col-span-3 flex flex-col justify-between">
+          <div className="booking__ticket__content">
+            <div className=" text-center mb-3">
               <span className="text-green-600 text-4xl font-bold">
                 {danhSachGheDangDat
                   .reduce((tongTien, ghe, index) => {

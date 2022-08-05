@@ -18,7 +18,7 @@ export default function ModalAnt({
     >
       {trailerURL && (
         <ReactPlayer
-          width={1000}
+          width="100%"
           height={500}
           playing={isPlaying}
           controls

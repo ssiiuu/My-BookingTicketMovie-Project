@@ -19,8 +19,8 @@ export default function Footer() {
 
   return (
     <footer className="mt-20 py-10 bg-gray-800 ">
-      <div className="container  ">
-        <div className="grid grid-cols-4">
+      <div className="container footer  ">
+        <div className="footer__item grid grid-cols-4 gap-3">
           <div className="col-span-1 ">
             <a
               rel="noopener noreferrer"
@@ -36,7 +36,7 @@ export default function Footer() {
               </div>
             </a>
           </div>
-          <div className="col-span-1 pt-10 ">
+          <div className="col-span-1 pt-10 footer__item__padding ">
             <ul>
               <li>
                 <a
@@ -87,7 +87,7 @@ export default function Footer() {
           </div>
           <div className="col-span-1">
             <p className="text-lg font-medium text-gray-300">Đối tác</p>
-            <div className="grid grid-cols-2">
+            <div className="footer__item__doiTac grid grid-cols-2 gap-3">
               {heThongRapArr.map((HTR) => {
                 return (
                   <div

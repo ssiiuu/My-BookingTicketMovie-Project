@@ -16,13 +16,16 @@ export default function News() {
           defaultActiveKey="1"
           onChange={onChange}
           centered={true}
-          tabBarGutter={50}
+          tabBarGutter={20}
           tabBarStyle={{ color: "black", fontWeight: 700, fontSize: 35 }}
         >
           <TabPane tab="ĐIỆN ẢNH 24H" key="1">
             <div>
-              <div style={{ height: 440 }} className="grid grid-cols-2 gap-5">
-                <div className="col-span-1 h-40">
+              <div
+                style={{ height: 500 }}
+                className="newsTabs__item grid grid-cols-2 gap-5"
+              >
+                <div className="col-span-1 ">
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
                     <img
                       style={{
@@ -43,7 +46,7 @@ export default function News() {
                     rượt đuổi gay cấn thót tim fans hâm mộ
                   </p>
                 </div>
-                <div className="col-span-1 h-40">
+                <div className="col-span-1 ">
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
                     <img
                       style={{
@@ -67,7 +70,7 @@ export default function News() {
                   </p>
                 </div>
               </div>
-              <div className="grid grid-cols-3 gap-5">
+              <div className="newsTabs__item grid grid-cols-3 gap-5">
                 <div className="col-span-1">
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
                     <img
@@ -102,9 +105,9 @@ export default function News() {
                     Sik, tác phẩm kinh dị - hành
                   </p>
                 </div>
-                <div className="col-span-1 mr-12">
+                <div className="col-span-1">
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
-                    <div className="flex items-center mb-2">
+                    <div className="flex mb-2">
                       <img
                         style={{
                           width: 85,
@@ -121,7 +124,7 @@ export default function News() {
                     </div>
                   </a>
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
-                    <div className="flex items-center mb-2">
+                    <div className="flex mb-2">
                       <img
                         style={{
                           width: 85,
@@ -138,7 +141,7 @@ export default function News() {
                     </div>
                   </a>
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
-                    <div className="flex items-center mb-2">
+                    <div className="flex mb-2">
                       <img
                         style={{
                           width: 85,
@@ -157,7 +160,7 @@ export default function News() {
                     </div>
                   </a>
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
-                    <div className="flex items-center mb-2">
+                    <div className="flex mb-2">
                       <img
                         style={{
                           width: 85,
@@ -180,8 +183,11 @@ export default function News() {
           </TabPane>
           <TabPane tab="REVIEW" key="2">
             <div>
-              <div style={{ height: 440 }} className="grid grid-cols-2 gap-5">
-                <div className="col-span-1 h-40">
+              <div
+                style={{ height: 500 }}
+                className="newsTabs__item grid grid-cols-2 gap-5"
+              >
+                <div className="col-span-1 ">
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
                     <img
                       style={{
@@ -204,7 +210,7 @@ export default function News() {
                     Nam!
                   </p>
                 </div>
-                <div className="col-span-1 h-40">
+                <div className="col-span-1 ">
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
                     <img
                       style={{
@@ -225,7 +231,7 @@ export default function News() {
                   </p>
                 </div>
               </div>
-              <div className="grid grid-cols-3 gap-5">
+              <div className="newsTabs__item grid grid-cols-3 gap-5">
                 <div className="col-span-1">
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
                     <img
@@ -262,7 +268,7 @@ export default function News() {
                 </div>
                 <div className="col-span-1 mr-12">
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
-                    <div className="flex items-center mb-2">
+                    <div className="flex mb-2">
                       <img
                         style={{
                           width: 85,
@@ -279,7 +285,7 @@ export default function News() {
                     </div>
                   </a>
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
-                    <div className="flex items-center mb-2">
+                    <div className="flex mb-2">
                       <img
                         style={{
                           width: 85,
@@ -296,7 +302,7 @@ export default function News() {
                     </div>
                   </a>
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
-                    <div className="flex items-center mb-2">
+                    <div className="flex mb-2">
                       <img
                         style={{
                           width: 85,
@@ -315,7 +321,7 @@ export default function News() {
                     </div>
                   </a>
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
-                    <div className="flex items-center mb-2">
+                    <div className="flex mb-2">
                       <img
                         style={{
                           width: 85,
@@ -338,8 +344,11 @@ export default function News() {
           </TabPane>
           <TabPane tab="KHUYẾN MÃI" key="3">
             <div>
-              <div style={{ height: 440 }} className="grid grid-cols-2 gap-5">
-                <div className="col-span-1 h-40">
+              <div
+                style={{ height: 500 }}
+                className="newsTabs__item grid grid-cols-2 gap-5"
+              >
+                <div className="col-span-1 ">
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
                     <img
                       style={{
@@ -359,7 +368,7 @@ export default function News() {
                     59k/vé khi mua vé trên TIX hoặc Mục Vé Phim trên ZaloPay.
                   </p>
                 </div>
-                <div className="col-span-1 h-40">
+                <div className="col-span-1 ">
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
                     <img
                       style={{
@@ -380,7 +389,7 @@ export default function News() {
                   </p>
                 </div>
               </div>
-              <div className="grid grid-cols-3 gap-5">
+              <div className="newsTabs__item grid grid-cols-3 gap-5">
                 <div className="col-span-1">
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
                     <img
@@ -417,7 +426,7 @@ export default function News() {
                 </div>
                 <div className="col-span-1 mr-12">
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
-                    <div className="flex items-center mb-2">
+                    <div className="flex mb-2">
                       <img
                         style={{
                           width: 85,
@@ -434,7 +443,7 @@ export default function News() {
                     </div>
                   </a>
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
-                    <div className="flex items-center mb-2">
+                    <div className="flex mb-2">
                       <img
                         style={{
                           width: 85,
@@ -451,7 +460,7 @@ export default function News() {
                     </div>
                   </a>
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
-                    <div className="flex items-center mb-2">
+                    <div className="flex mb-2">
                       <img
                         style={{
                           width: 85,
@@ -470,7 +479,7 @@ export default function News() {
                     </div>
                   </a>
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
-                    <div className="flex items-center mb-2">
+                    <div className="flex mb-2">
                       <img
                         style={{
                           width: 85,

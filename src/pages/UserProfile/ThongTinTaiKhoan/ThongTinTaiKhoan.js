@@ -24,7 +24,7 @@ export default function ThongTinTaiKhoan() {
   };
 
   return (
-    <div style={{ width: 700 }}>
+    <div className="profile__tabs__form" style={{ width: 700 }}>
       <Form
         name="basic"
         labelCol={{
@@ -99,6 +99,7 @@ export default function ThongTinTaiKhoan() {
         </Form.Item>
 
         <Form.Item
+          className="profile__tabs__btn"
           wrapperCol={{
             offset: 4,
             span: 20,

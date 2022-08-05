@@ -26,7 +26,8 @@ export default function HomeCarousel() {
       return (
         <div key={index}>
           <img
-            style={{ width: "100vw", height: "700px" }}
+            className="homecarousel__img"
+            style={{ width: "100vw", height: "600px" }}
             src={item.hinhAnh}
             alt="123"
           />

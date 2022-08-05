@@ -17,23 +17,24 @@ export default function UserProfile() {
 
   return (
     <div className="pt-28">
-      <div className="grid grid-cols-3">
+      <div className="profile grid grid-cols-3">
         <div className="col-span-1 ml-5">
           <div className="flex flex-col  items-center">
             {userInfor.avatar ? (
               <img
-                style={{ width: 500, height: 500, borderRadius: "100%" }}
+                className="profile__img"
+                style={{
+                  width: 500,
+                  objectFit: "cover",
+                  borderRadius: "100%",
+                }}
                 src={userInfor.avatar}
                 alt={userInfor.taiKhoan}
               />
             ) : (
-              //   <img
-              //     style={{ width: 500, height: 500, borderRadius: "100%" }}
-              //     src="https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg"
-              //     alt={userInfor.taiKhoan}
-              //   />
               <img
-                style={{ width: 500, height: 500, borderRadius: "100%" }}
+                className="profile__img"
+                style={{ width: 500, borderRadius: "100%" }}
                 src="https://picsum.photos/500"
                 alt={userInfor.taiKhoan}
               />
@@ -42,7 +43,7 @@ export default function UserProfile() {
             <p className="text-xl font-semibold">{userInfor.taiKhoan}</p>
           </div>
         </div>
-        <div className="col-span-2 mt-10 ml-5">
+        <div className="profile__tabs col-span-2 mt-10 ml-5">
           <Tabs defaultActiveKey="1" onChange={onChange}>
             <TabPane tab="THÔNG TIN TÀI KHOẢN" key="1">
               <ThongTinTaiKhoan />
