@@ -6,7 +6,7 @@ import { SET_USER_INFOR } from "../../../redux/type/nguoiDungType";
 import { message, Popconfirm } from "antd";
 import { history } from "../../../App";
 
-export default function UserLogged() {
+export default function UserLoggedIn() {
   const { userInfor } = useSelector((state) => state.quanLyNguoiDungReducer);
 
   const dispatch = useDispatch();

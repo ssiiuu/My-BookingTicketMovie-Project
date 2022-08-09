@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { SET_USER_INFOR } from "../../../redux/type/nguoiDungType";
 import localStorageServ from "../../../services/locaStorage.service";
 import { CloseOutlined } from "@ant-design/icons";
+import UserNotLoggedIn from "./UserNotLoggedIn";
+import { Button } from "antd";
 
 export default function NavHeader() {
   const { userInfor } = useSelector((state) => state.quanLyNguoiDungReducer);
@@ -26,7 +28,8 @@ export default function NavHeader() {
   };
   return (
     <div>
-      <header className="p-2 shadow-xl fixed bg-white text-black w-full z-50 ">
+      <div className="w-screen h-20"></div>
+      <header className="p-3 fixed top-0 shadow-xl bg-white text-black w-full z-50 ">
         <div className="navHeader container flex justify-between items-center  mx-auto">
           <NavLink
             to={"/"}
@@ -79,31 +82,39 @@ export default function NavHeader() {
               </a>
             </li>
           </ul>
-          <div className="navHeader__user hidden md:block">
+          <div className="navHeader__user hidden lg:block">
             <UserNavHeader />
           </div>
 
-          <button
-            onClick={() => {
-              setOpenMenu(true);
-            }}
-            className="navHeader__btn md:hidden"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              className="w-6 h-6 dark:text-coolGray-100"
+          {userInfor ? (
+            <button
+              onClick={() => {
+                setOpenMenu(true);
+              }}
+              className="navHeader__btn lg:hidden"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          </button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                className="w-6 h-6 dark:text-coolGray-100"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          ) : (
+            <NavLink to={"/register"} className="lg:hidden">
+              <Button className="hover:border-green-500 hover:text-green-500 ">
+                Sign up
+              </Button>
+            </NavLink>
+          )}
           {openMenu ? (
             <div className="navHeader__overlay w-screen">
               <div
@@ -123,14 +134,14 @@ export default function NavHeader() {
                     }}
                   >
                     <div className="flex items-center">
-                      {userInfor.avatar ? (
+                      {userInfor?.avatar ? (
                         <img
                           style={{
                             width: 50,
                             height: 50,
                             borderRadius: "100%",
                           }}
-                          src={userInfor.avatar}
+                          src={userInfor?.avatar}
                           alt="avatar"
                         />
                       ) : (
@@ -144,7 +155,7 @@ export default function NavHeader() {
                           alt="avatar"
                         />
                       )}
-                      <span className="ml-3">{userInfor.hoTen}</span>
+                      <span className="ml-3">{userInfor?.hoTen}</span>
                     </div>
                   </NavLink>
                 </li>

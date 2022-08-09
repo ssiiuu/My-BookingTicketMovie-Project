@@ -17,8 +17,8 @@ export default function HomeCarousel() {
       return (
         <div key={index} className="w-screen h-fit">
           <img
-            className="homecarousel__img  w-full object-cover"
-            style={{ height: 300 }}
+            className="homecarousel__img"
+            style={{ height: 300, width: "100%", objectFit: "cover" }}
             src={item.hinhAnh}
             alt="123"
           />
