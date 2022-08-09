@@ -3,7 +3,7 @@ import HomeCarousel from "./HomeCarousel/HomeCarousel";
 import ListPhim from "./ListPhim/ListPhim";
 import News from "./News/News";
 import TabsPhim from "./TabsPhim/TabsPhim";
-import "./Home.css";
+import "./HomeResponesvie.css";
 
 export default function Home() {
   return (

@@ -58,7 +58,7 @@ export default function TicketBookingPage(props) {
               ghe.stt
             )}
           </button>
-          {(index + 1) % 16 === 0 ? <br className="seat__br" /> : <></>}
+          {(index + 1) % 16 === 0 ? <br className="hidden xl:block" /> : <></>}
         </Fragment>
       );
     });
@@ -66,8 +66,8 @@ export default function TicketBookingPage(props) {
 
   return (
     <div className="p-10 min-h-screen">
-      <div className="booking__ticket grid grid-cols-12 ">
-        <div className="col-span-9 mt-5">
+      <div className="booking__ticket lg:grid lg:grid-cols-12">
+        <div className="col-span-9 my-5 ">
           <div className="flex justify-center">
             <div>
               <img
@@ -80,7 +80,7 @@ export default function TicketBookingPage(props) {
             <div className="list__seat">{renderSeats()}</div>
           </div>
         </div>
-        <div className="booking__ticket__check min-h-screen col-span-3 flex flex-col justify-between">
+        <div className="booking__ticket__check min-h-screen col-span-3 flex flex-col justify-between p-5">
           <div className="booking__ticket__content">
             <div className=" text-center mb-3">
               <span className="text-green-600 text-4xl font-bold">

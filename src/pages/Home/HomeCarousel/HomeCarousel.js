@@ -12,22 +12,13 @@ export default function HomeCarousel() {
     dispatch(getCarouselAction());
   }, []);
 
-  // const contentStyle = {
-  //   height: "100vh",
-  //   width: "100vw",
-  //   color: "#fff",
-  //   lineHeight: "160px",
-  //   textAlign: "center",
-  //   background: "#364d79",
-  // };
-
   const renderCarousel = () => {
     return arrCarousel.map((item, index) => {
       return (
-        <div key={index}>
+        <div key={index} className="w-screen h-fit">
           <img
-            className="homecarousel__img"
-            style={{ width: "100vw", height: "600px" }}
+            className="homecarousel__img  w-full object-cover"
+            style={{ height: 300 }}
             src={item.hinhAnh}
             alt="123"
           />

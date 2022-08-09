@@ -70,10 +70,11 @@ export default function Detail() {
         blur={50} // default blur value is 10px
         borderRadius={0} // default border radius value is 10px
       >
-        <div className="">
-          <div className="grid grid-cols-6">
-            <div className="col-start-2 col-span-1">
+        <div className="lg:container lg:mx-auto">
+          <div className="flex flex-col items-center xl:grid xl:grid-cols-3">
+            <div className="col-span-1 ">
               <div
+                style={{ width: 300, height: 400 }}
                 onClick={() => {
                   setTrailerURL(thongTinChiTietPhim.trailer);
                   showModal();
@@ -82,8 +83,8 @@ export default function Detail() {
               >
                 <img
                   style={{
-                    width: 300,
-                    height: 400,
+                    width: "100%",
+                    height: "100%",
                     objectFit: "cover",
                     borderRadius: 6,
                   }}
@@ -106,8 +107,8 @@ export default function Detail() {
                 </div>
               </div>
             </div>
-            <div className="col-span-2 flex items-center ml-4">
-              <div className="text-white">
+            <div className="col-span-2 xl:flex justify-around">
+              <div className="text-white text-center xl:text-left">
                 {thongTinChiTietPhim.hot ? (
                   <div className="w-10 h-5 text-center font-bold bg-yellow-500">
                     Hot
@@ -125,49 +126,31 @@ export default function Detail() {
                 </p>
                 <p className="font-semibold ">{thongTinChiTietPhim.moTa}</p>
               </div>
-            </div>
-            <div className="flex flex-col items-center justify-center">
-              <div
-                className={`c100 p${
-                  thongTinChiTietPhim.danhGia * 10
-                } big green`}
-              >
-                <span>{thongTinChiTietPhim.danhGia}</span>
-                <div className="slice">
-                  <div className="bar"></div>
-                  <div className="fill"></div>
+              <div className="flex flex-col items-center justify-center">
+                <div
+                  className={`c100 p${
+                    thongTinChiTietPhim.danhGia * 10
+                  } big green`}
+                >
+                  <span>{thongTinChiTietPhim.danhGia}</span>
+                  <div className="slice">
+                    <div className="bar"></div>
+                    <div className="fill"></div>
+                  </div>
                 </div>
-              </div>
-              <div>
-                <Rate
-                  allowHalf
-                  disabled
-                  value={thongTinChiTietPhim.danhGia / 2}
-                />
+                <div>
+                  <Rate
+                    allowHalf
+                    disabled
+                    value={thongTinChiTietPhim.danhGia / 2}
+                  />
+                </div>
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-6">
-            <div className="col-start-2 col-span-4 mt-20 bg-white p-5">
-              <Tabs
-                defaultActiveKey="1"
-                onChange={onChange}
-                centered={true}
-                tabBarGutter={50}
-                tabBarStyle={{ color: "green" }}
-                style={{ minHeight: 500 }}
-              >
-                <TabPane tab="LỊCH CHIẾU" key="1">
-                  <DetailLichChieuPhim />
-                </TabPane>
-                {/* <TabPane tab="Thông Tin" key="2">
-                  Thông tin
-                </TabPane>
-                <TabPane tab="Đánh Giá" key="3">
-                  Đánh giá
-                </TabPane> */}
-              </Tabs>
-            </div>
+
+          <div className="col-start-2 col-span-4 mt-20 bg-white p-5">
+            <DetailLichChieuPhim />
           </div>
         </div>
       </CustomCard>

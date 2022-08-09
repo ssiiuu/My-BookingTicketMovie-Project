@@ -134,13 +134,17 @@ export default function TabsPhim(props) {
   };
   return (
     <div id="cumRap" className="mt-20">
-      <Tabs tabPosition={"left"} defaultActiveKey="0" className="tabsPhim">
+      <Tabs
+        tabPosition={"left"}
+        defaultActiveKey="0"
+        className="tabsPhim hidden xl:flex"
+      >
         {renderHeThongRap()}
       </Tabs>
       <Tabs
         tabPosition={"top"}
         defaultActiveKey="0"
-        className="tabsPhim__mobile hidden px-5"
+        className="tabsPhim__mobile xl:hidden px-5"
       >
         {renderHeThongRapMobile()}
       </Tabs>

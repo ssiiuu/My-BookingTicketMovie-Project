@@ -65,7 +65,7 @@ export default function UserLogged() {
 
   return (
     <div className="flex items-center">
-      <h1 className="mr-2 font-black">Hello!, {userInfor.hoTen}</h1>
+      <h1 className="mr-2 font-black">{userInfor.hoTen}</h1>
       <Dropdown
         placement="bottomRight"
         arrow

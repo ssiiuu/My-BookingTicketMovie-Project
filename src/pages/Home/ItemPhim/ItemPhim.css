@@ -17,6 +17,7 @@
   left: 0;
   background: linear-gradient(0deg,#000,transparent);
   opacity: 0;
+  border-radius: 10px;
 }
 .play-trailer{
   position: absolute;

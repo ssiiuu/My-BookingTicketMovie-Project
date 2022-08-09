@@ -1,0 +1,25 @@
+@media only screen and (min-width: 640px) {
+    .homecarousel__img{
+        height: 400px !important;
+    }
+    .slick-prev{
+        left: -35px !important;
+        z-index: 10;
+    }
+    .slick-next {
+        right: -5px !important;
+        z-index: 10;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .homecarousel__img{
+        height: 500px !important;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .homecarousel__img{
+        height:650px !important;
+    }
+}

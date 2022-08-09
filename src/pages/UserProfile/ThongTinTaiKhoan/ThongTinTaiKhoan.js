@@ -24,7 +24,7 @@ export default function ThongTinTaiKhoan() {
   };
 
   return (
-    <div className="profile__tabs__form" style={{ width: 700 }}>
+    <div className="profile__tabs__form" style={{ width: "80vw" }}>
       <Form
         name="basic"
         labelCol={{
@@ -98,14 +98,9 @@ export default function ThongTinTaiKhoan() {
           <Input name="soDT" value={inputValue.soDT} onChange={handleChange} />
         </Form.Item>
 
-        <Form.Item
-          className="profile__tabs__btn"
-          wrapperCol={{
-            offset: 4,
-            span: 20,
-          }}
-        >
+        <Form.Item className="profile__tabs__btn text-center">
           <Button
+            className="w-40"
             onClick={() => {
               message.warning("There are some problems with your operation!");
             }}

@@ -11,7 +11,7 @@ export default function ListPhim() {
   }, []);
 
   return (
-    <div id="lichChieu" className="container">
+    <div id="lichChieu">
       <MultipleRows arrFilm={arrFilm} />
     </div>
   );

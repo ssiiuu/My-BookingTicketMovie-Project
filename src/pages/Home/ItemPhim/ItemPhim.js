@@ -10,10 +10,10 @@ const { Meta } = Card;
 export default function ItemPhim({ phim }) {
   const dispatch = useDispatch();
   return (
-    <div className="item-film p-5" style={{ width: "100%", height: 450 }}>
+    <div className="item-film p-5" style={{ height: 500 }}>
       <div
         className="item-film-img w-full cursor-pointer "
-        style={{ height: 350 }}
+        style={{ height: 400 }}
       >
         <img
           src={phim.hinhAnh}

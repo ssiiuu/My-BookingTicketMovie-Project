@@ -20,7 +20,7 @@
     background-color: rgb(234, 234, 8);
 }
 
-@media only screen and (max-width: 1025px) {
+/* @media only screen and (max-width: 1025px) {
     .list__seat{
         grid-template-columns: repeat(8,1fr) !important;
     }
@@ -44,4 +44,4 @@
 }
 @media only screen and (max-width: 481px) {
 
-}
+} */

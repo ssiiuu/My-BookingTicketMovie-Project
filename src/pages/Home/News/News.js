@@ -11,7 +11,7 @@ export default function News() {
 
   return (
     <div id="tinTuc">
-      <div className="container mt-20">
+      <div className="mt-20">
         <Tabs
           defaultActiveKey="1"
           onChange={onChange}
@@ -20,12 +20,9 @@ export default function News() {
           tabBarStyle={{ color: "black", fontWeight: 700, fontSize: 35 }}
         >
           <TabPane tab="ĐIỆN ẢNH 24H" key="1">
-            <div>
-              <div
-                style={{ height: 500 }}
-                className="newsTabs__item grid grid-cols-2 gap-5"
-              >
-                <div className="col-span-1 ">
+            <div className="mt-10">
+              <div className="newsTabs__item lg:grid lg:grid-cols-2 gap-4">
+                <div className="">
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
                     <img
                       style={{
@@ -46,7 +43,7 @@ export default function News() {
                     rượt đuổi gay cấn thót tim fans hâm mộ
                   </p>
                 </div>
-                <div className="col-span-1 ">
+                <div className="">
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
                     <img
                       style={{
@@ -70,7 +67,7 @@ export default function News() {
                   </p>
                 </div>
               </div>
-              <div className="newsTabs__item grid grid-cols-3 gap-5">
+              <div className="newsTabs__item lg:grid lg:grid-cols-3 gap-4">
                 <div className="col-span-1">
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
                     <img
@@ -182,11 +179,8 @@ export default function News() {
             </div>
           </TabPane>
           <TabPane tab="REVIEW" key="2">
-            <div>
-              <div
-                style={{ height: 500 }}
-                className="newsTabs__item grid grid-cols-2 gap-5"
-              >
+            <div className="mt-10">
+              <div className="newsTabs__item lg:grid lg:grid-cols-2 gap-4">
                 <div className="col-span-1 ">
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
                     <img
@@ -231,7 +225,7 @@ export default function News() {
                   </p>
                 </div>
               </div>
-              <div className="newsTabs__item grid grid-cols-3 gap-5">
+              <div className="newsTabs__item lg:grid lg:grid-cols-3 gap-4">
                 <div className="col-span-1">
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
                     <img
@@ -343,11 +337,8 @@ export default function News() {
             </div>
           </TabPane>
           <TabPane tab="KHUYẾN MÃI" key="3">
-            <div>
-              <div
-                style={{ height: 500 }}
-                className="newsTabs__item grid grid-cols-2 gap-5"
-              >
+            <div className="mt-10">
+              <div className="newsTabs__item lg:grid lg:grid-cols-2 gap-4">
                 <div className="col-span-1 ">
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
                     <img
@@ -389,7 +380,7 @@ export default function News() {
                   </p>
                 </div>
               </div>
-              <div className="newsTabs__item grid grid-cols-3 gap-5">
+              <div className="newsTabs__item lg:grid lg:grid-cols-3 gap-4">
                 <div className="col-span-1">
                   <a href="https://movie.zalopay.vn/landing" target="_blank">
                     <img

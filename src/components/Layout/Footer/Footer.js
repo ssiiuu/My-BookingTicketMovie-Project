@@ -20,8 +20,8 @@ export default function Footer() {
   return (
     <footer className="mt-20 py-10 bg-gray-800 ">
       <div className="container footer  ">
-        <div className="footer__item grid grid-cols-4 gap-3">
-          <div className="col-span-1 ">
+        <div className="footer__item flex flex-wrap">
+          <div className="col-span-1 w-2/4 lg:w-1/4 mb-5">
             <a
               rel="noopener noreferrer"
               href="#"
@@ -36,7 +36,33 @@ export default function Footer() {
               </div>
             </a>
           </div>
-          <div className="col-span-1 pt-10 footer__item__padding ">
+          <div className="col-span-1 w-2/4 lg:w-1/4 mb-5">
+            <p className="text-lg font-medium text-gray-300 ">ConTact</p>
+            <div className="flex items-center text-3xl  space-x-3">
+              <a
+                className="cursor-pointer text-gray-300"
+                href="https://www.cgv.vn/"
+                target="_blank"
+              >
+                <FacebookOutlined />
+              </a>
+              <a
+                className="cursor-pointer text-gray-300"
+                href="https://www.cgv.vn/"
+                target="_blank"
+              >
+                <TwitterOutlined />
+              </a>
+              <a
+                className="cursor-pointer text-gray-300"
+                href="https://www.cgv.vn/"
+                target="_blank"
+              >
+                <SkypeOutlined />
+              </a>
+            </div>
+          </div>
+          <div className="col-span-1 w-2/4 lg:w-1/4">
             <ul>
               <li>
                 <a
@@ -85,9 +111,9 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="col-span-1">
+          <div className="col-span-1 w-2/4 lg:w-1/4">
             <p className="text-lg font-medium text-gray-300">Đối tác</p>
-            <div className="footer__item__doiTac grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-3 gap-1">
               {heThongRapArr.map((HTR) => {
                 return (
                   <div
@@ -103,32 +129,6 @@ export default function Footer() {
                   </div>
                 );
               })}
-            </div>
-          </div>
-          <div className="col-span-1 ">
-            <p className="text-lg font-medium text-gray-300 ">ConTact</p>
-            <div className="flex items-center text-3xl  space-x-3">
-              <a
-                className="cursor-pointer text-gray-300"
-                href="https://www.cgv.vn/"
-                target="_blank"
-              >
-                <FacebookOutlined />
-              </a>
-              <a
-                className="cursor-pointer text-gray-300"
-                href="https://www.cgv.vn/"
-                target="_blank"
-              >
-                <TwitterOutlined />
-              </a>
-              <a
-                className="cursor-pointer text-gray-300"
-                href="https://www.cgv.vn/"
-                target="_blank"
-              >
-                <SkypeOutlined />
-              </a>
             </div>
           </div>
         </div>

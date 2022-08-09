@@ -8,7 +8,9 @@ import {
 } from "../../redux/type/phimType";
 import styleSlick from "./MultipleRowSlick.module.css";
 import ModalAnt from "../Modal-Ant/ModalAnt";
-import { Input } from "antd";
+import { Input, Modal } from "antd";
+import ReactPlayer from "react-player";
+import { CloseOutlined } from "@ant-design/icons";
 const { Search } = Input;
 
 function SampleNextArrow(props) {
@@ -80,7 +82,7 @@ const MultipleRows = ({ arrFilm }) => {
     prevArrow: <SamplePrevArrow />,
     responsive: [
       {
-        breakpoint: 1025,
+        breakpoint: 1500,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
@@ -89,7 +91,7 @@ const MultipleRows = ({ arrFilm }) => {
         },
       },
       {
-        breakpoint: 769,
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -97,7 +99,7 @@ const MultipleRows = ({ arrFilm }) => {
         },
       },
       {
-        breakpoint: 481,
+        breakpoint: 680,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -119,10 +121,21 @@ const MultipleRows = ({ arrFilm }) => {
     setIsModalVisible(false);
     setIsPlaying(false);
   };
+
   return (
     <div>
-      <div className="listfilm__top flex items-center justify-between">
-        <div className="flex items-center justify-between">
+      <div className="listfilm__top  md:flex flex-row justify-between">
+        <Search
+          className="listfilm__search w-full my-3 md:my-5"
+          style={{ width: 300 }}
+          placeholder="Nhập tên phim..."
+          onSearch={onSearch}
+          enterButton
+          onChange={(e) => {
+            setSearchInput(e.target.value);
+          }}
+        />
+        <div className=" w-full flex items-center justify-center">
           <button
             onClick={() => {
               dispatch({
@@ -130,7 +143,7 @@ const MultipleRows = ({ arrFilm }) => {
               });
             }}
             type="button"
-            className={`listfilm__btn ${styleSlick[activeBtnDC]} px-8 py-3 font-semibold border rounded mr-2`}
+            className={`listfilm__btn ${styleSlick[activeBtnDC]} px-4 py-2 font-semibold border rounded mr-2`}
           >
             Phim đang chiếu
           </button>
@@ -141,21 +154,11 @@ const MultipleRows = ({ arrFilm }) => {
               });
             }}
             type="button"
-            className={`listfilm__btn ${styleSlick[activeBtnSC]} px-8 py-3 font-semibold border rounded `}
+            className={`listfilm__btn ${styleSlick[activeBtnSC]} px-4 py-2 font-semibold border rounded `}
           >
             Phim sắp chiếu
           </button>
         </div>
-        <Search
-          className="listfilm__search"
-          style={{ width: 300 }}
-          placeholder="Nhập tên phim..."
-          onSearch={onSearch}
-          enterButton
-          onChange={(e) => {
-            setSearchInput(e.target.value);
-          }}
-        />
       </div>
       <ModalAnt
         isPlaying={isPlaying}
@@ -163,8 +166,7 @@ const MultipleRows = ({ arrFilm }) => {
         isModalVisible={isModalVisible}
         handleCancel={handleCancel}
       />
-
-      <Slider {...settings} className="mt-10">
+      <Slider {...settings} className="m-10 ">
         {renderPhim()}
       </Slider>
     </div>

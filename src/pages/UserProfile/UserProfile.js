@@ -17,14 +17,14 @@ export default function UserProfile() {
 
   return (
     <div className="pt-28">
-      <div className="profile grid grid-cols-3">
+      <div className="profile lg:grid lg:grid-cols-3">
         <div className="col-span-1 ml-5">
           <div className="flex flex-col  items-center">
             {userInfor.avatar ? (
               <img
                 className="profile__img"
                 style={{
-                  width: 500,
+                  width: 200,
                   objectFit: "cover",
                   borderRadius: "100%",
                 }}
@@ -34,7 +34,7 @@ export default function UserProfile() {
             ) : (
               <img
                 className="profile__img"
-                style={{ width: 500, borderRadius: "100%" }}
+                style={{ width: 200, borderRadius: "100%" }}
                 src="https://picsum.photos/500"
                 alt={userInfor.taiKhoan}
               />
@@ -44,7 +44,7 @@ export default function UserProfile() {
           </div>
         </div>
         <div className="profile__tabs col-span-2 mt-10 ml-5">
-          <Tabs defaultActiveKey="1" onChange={onChange}>
+          <Tabs defaultActiveKey="1" centered onChange={onChange}>
             <TabPane tab="THÔNG TIN TÀI KHOẢN" key="1">
               <ThongTinTaiKhoan />
             </TabPane>

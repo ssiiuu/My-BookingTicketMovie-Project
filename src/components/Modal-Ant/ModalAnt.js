@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Modal } from "antd";
 import ReactPlayer from "react-player";
 import "./ModalAnt.css";
+import { CloseOutlined } from "@ant-design/icons";
 
 export default function ModalAnt({
   isModalVisible,

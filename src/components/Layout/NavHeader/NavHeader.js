@@ -41,7 +41,7 @@ export default function NavHeader() {
               alt="cybersoft-logo"
             />
           </NavLink>
-          <ul className="navHeader__link items-stretch space-x-2 lg:flex flex   ">
+          <ul className="navHeader__link items-stretch space-x-2 hidden md:flex">
             <li>
               <a
                 onClick={() => {
@@ -79,7 +79,7 @@ export default function NavHeader() {
               </a>
             </li>
           </ul>
-          <div className="navHeader__user">
+          <div className="navHeader__user hidden md:block">
             <UserNavHeader />
           </div>
 
@@ -87,7 +87,7 @@ export default function NavHeader() {
             onClick={() => {
               setOpenMenu(true);
             }}
-            className="navHeader__btn hidden"
+            className="navHeader__btn md:hidden"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +105,7 @@ export default function NavHeader() {
             </svg>
           </button>
           {openMenu ? (
-            <div className="navHeader__overlay">
+            <div className="navHeader__overlay w-screen">
               <div
                 className="navHeader__overlay__close"
                 onClick={() => {
